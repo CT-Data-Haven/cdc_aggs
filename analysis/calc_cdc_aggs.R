@@ -20,7 +20,7 @@ pops15 <- tidycensus::get_acs("tract", table = "B01003", year = 2015, state = "0
 
 ############# PLACES, FKA 500 CITIES
 places_url <- "https://chronicdata.cdc.gov/resource/cwsq-ngmh.csv"
-places_q <- list("$select" = "year, short_question_text as question, locationname as geoid, data_value as value, totalpopulation as pop",
+places_q <- list("$select" = "year, categoryid as topic, short_question_text as question, locationname as geoid, data_value as value, totalpopulation as pop",
                  "$where" = "stateabbr='CT'",
                  "$limit" = "25000")
 places <- httr::GET(places_url, query = places_q) %>%
@@ -46,7 +46,7 @@ pl_lvls[["tracts"]] <- places %>%
 places_df <- bind_rows(pl_lvls, .id = "level") %>%
   mutate(level = as_factor(level),
          year = as.character(year)) %>%
-  group_by(question, level, year, city, town, name) %>%
+  group_by(topic, question, level, year, city, town, name) %>%
   summarise(value = weighted.mean(value, pop)) %>%
   ungroup() %>%
   select(level, question, year, city, town, everything())
@@ -73,12 +73,22 @@ life_lvls[["tracts"]] <- life_exp %>%
   rename(name = tract)
 life_df <- bind_rows(life_lvls, .id = "level") %>%
   mutate(level = as_factor(level)) %>%
-  group_by(question, level, year, city, town, name) %>%
+  group_by(topic = "life_expectancy", question, level, year, city, town, name) %>%
   summarise(value = weighted.mean(value, pop)) %>%
   ungroup() %>%
   select(level, question, year, city, town, everything())
 
 
 ####### BIND & OUTPUT
-bind_rows(places_df, life_df) %>%
-  write_csv("output_data/cdc_health_all_lvls_nhood_2020.csv")
+out_df <- lst(life_df, places_df) %>%
+  bind_rows(.id = "src") %>%
+  mutate(value = ifelse(src == "places_df", round(value, 2), round(value, 1)),
+         topic = as_factor(topic)) %>%
+  select(topic, everything(), -src) %>%
+  arrange(topic, question, city, level)
+saveRDS(out_df, "output_data/cdc_health_all_lvls_nhood_2020.rds")
+
+out_df %>%
+  select(-topic) %>%
+  pivot_wider(names_from = c(question, year)) %>%
+  write_csv("output_data/cdc_health_all_lvls_wide_2020.csv")
