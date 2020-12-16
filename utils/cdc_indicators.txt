@@ -1,0 +1,11 @@
+topic,indicator,new_display,display
+outcomes,heart_disease,Percent adults with coronary heart disease,Coronary heart disease
+outcomes,asthma,Current asthma rate (adults),Current asthma
+outcomes,diabetes,Diabetes rate (adults),Diabetes
+outcomes,blood_pressure,Percent adults with high blood pressure,High blood pressure
+prevention,checkup,Annual checkup rate (adults),Annual checkup
+prevention,dental,Annual dental visit rate (adults),Dental visit
+behaviors,smoking,Current smoking rate (adults),Current smoking
+behaviors,sleep,Percent adults sleeping under 7 hours daily,Sleep <7 hours
+expectancy,life_exp,Life expectancy in years,Life expectancy
+prevention,insurance,"Ages 18-64, no health insurance",Health insurance
