@@ -8,7 +8,7 @@ nhood_wts <- lst(new_haven = nhv_tracts, bridgeport_tracts, hartford_tracts, sta
   set_names(camiller::clean_titles, cap_all = TRUE) %>%
   bind_rows(.id = "city") %>%
   select(-tract)
-tract2reg <- cwi::regions[c("Greater New Haven", "Greater Hartford", "Fairfield County")] %>%
+tract2reg <- cwi::regions[c("Greater New Haven", "Greater Hartford", "Fairfield County", "Middlesex County", "New London County")] %>%
   enframe(value = "town") %>%
   unnest(town) %>%
   inner_join(tract2town, by = "town") %>%
