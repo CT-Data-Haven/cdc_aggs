@@ -13,6 +13,8 @@ tract2reg <- cwi::regions[c("Greater New Haven", "Greater Hartford", "Fairfield 
   unnest(town) %>%
   inner_join(tract2town, by = "town") %>%
   select(-town)
+tract2puma <- cwi::xwalk %>%
+  distinct(puma_fips, tract)
 
 pops15 <- tidycensus::get_acs("tract", table = "B01003", year = 2015, state = "09") %>%
   janitor::clean_names() %>%
@@ -35,6 +37,9 @@ pl_lvls[["state"]] <- places %>%
   mutate(name = "Connecticut")
 pl_lvls[["regions"]] <- places %>%
   inner_join(tract2reg, by = c("geoid" = "tract"))
+pl_lvls[["pumas"]] <- places %>%
+  inner_join(tract2puma, by = c("geoid" = "tract")) %>%
+  rename(name = puma_fips)
 pl_lvls[["towns"]] <- places %>%
   left_join(tract2town, by = c("geoid" = "tract")) %>%
   rename(name = town)
@@ -63,6 +68,9 @@ life_lvls[["state"]] <- life_exp %>%
   mutate(name = "Connecticut")
 life_lvls[["regions"]] <- life_exp %>%
   inner_join(tract2reg, by = "tract")
+life_lvls[["pumas"]] <- life_exp %>%
+  inner_join(tract2puma, by = "tract") %>%
+  rename(name = puma_fips)
 life_lvls[["towns"]] <- life_exp %>%
   left_join(tract2town, by = "tract") %>%
   rename(name = town)
