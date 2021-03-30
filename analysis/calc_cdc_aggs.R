@@ -2,13 +2,14 @@ library(tidyverse)
 library(cwi)
 
 ############# META
+hosp_regs <- readRDS("utils/hospital_areas_list.rds")
 meta <- read_csv("utils/cdc_indicators.txt")
 nhood_wts <- lst(new_haven = nhv_tracts, bridgeport_tracts, hartford_tracts, stamford_tracts) %>%
   set_names(str_remove, "_tracts") %>%
   set_names(camiller::clean_titles, cap_all = TRUE) %>%
   bind_rows(.id = "city") %>%
   select(-tract)
-tract2reg <- cwi::regions[c("Greater New Haven", "Greater Hartford", "Fairfield County", "Middlesex County", "New London County")] %>%
+tract2reg <- c(cwi::regions[c("Greater New Haven", "Greater Hartford", "Fairfield County", "Middlesex County", "New London County")], hosp_regs) %>%
   enframe(value = "town") %>%
   unnest(town) %>%
   inner_join(tract2town, by = "town") %>%
