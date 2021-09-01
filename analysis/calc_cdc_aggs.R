@@ -9,12 +9,15 @@ nhood_wts <- lst(new_haven = nhv_tracts, bridgeport_tracts, hartford_tracts, sta
   set_names(camiller::clean_titles, cap_all = TRUE) %>%
   bind_rows(.id = "city") %>%
   select(-tract)
-tract2reg <- c(cwi::regions[c("Greater New Haven", "Greater Hartford", "Fairfield County", "Middlesex County", "New London County")], hosp_regs) %>%
+tract2reg <- c(cwi::regions[c("Greater New Haven", "Greater Hartford", 
+                              str_subset(names(cwi::regions), "^[A-Z][\\w\\s]+County$"))], 
+               hosp_regs) %>%
   enframe(value = "town") %>%
   unnest(town) %>%
   inner_join(tract2town, by = "town") %>%
   select(-town)
 tract2puma <- cwi::xwalk %>%
+  filter(!str_detect(puma, "^[A-Z][\\w\\s]+ County$")) %>%
   distinct(puma_fips, tract)
 
 pops15 <- tidycensus::get_acs("tract", table = "B01003", year = 2015, state = "09") %>%
