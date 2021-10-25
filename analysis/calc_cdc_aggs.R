@@ -2,7 +2,9 @@ library(tidyverse)
 library(cwi)
 
 ############# META
-hosp_regs <- readRDS("utils/hospital_areas_list.rds")
+# hosp_regs <- readRDS("utils/hospital_areas_list.rds")
+# includes hospitals
+extra_regs <- readRDS("utils/misc_regions_list.rds")
 meta <- read_csv("utils/cdc_indicators.txt")
 nhood_wts <- lst(new_haven = nhv_tracts, bridgeport_tracts, hartford_tracts, stamford_tracts) %>%
   set_names(str_remove, "_tracts") %>%
@@ -11,7 +13,7 @@ nhood_wts <- lst(new_haven = nhv_tracts, bridgeport_tracts, hartford_tracts, sta
   select(-tract)
 tract2reg <- c(cwi::regions[c("Greater New Haven", "Greater Hartford", 
                               str_subset(names(cwi::regions), "^[A-Z][\\w\\s]+County$"))], 
-               hosp_regs) %>%
+               extra_regs) %>%
   enframe(value = "town") %>%
   unnest(town) %>%
   inner_join(tract2town, by = "town") %>%
