@@ -6,11 +6,10 @@ library(cwi)
 # includes hospitals
 extra_regs <- readRDS("utils/misc_regions_list.rds")
 meta <- read_csv("utils/cdc_indicators.txt")
-nhood_wts <- lst(new_haven = nhv_tracts, bridgeport_tracts, hartford_tracts, stamford_tracts) %>%
-  set_names(str_remove, "_tracts") %>%
+nhood_wts <- lst(new_haven_tracts19, bridgeport_tracts19, hartford_tracts19, stamford_tracts19) %>%
+  set_names(str_remove, "_tracts.+") %>%
   set_names(camiller::clean_titles, cap_all = TRUE) %>%
-  bind_rows(.id = "city") %>%
-  select(-tract)
+  bind_rows(.id = "city")
 tract2reg <- c(cwi::regions[c("Greater New Haven", "Greater Hartford", 
                               str_subset(names(cwi::regions), "^[A-Z][\\w\\s]+County$"))], 
                extra_regs) %>%
