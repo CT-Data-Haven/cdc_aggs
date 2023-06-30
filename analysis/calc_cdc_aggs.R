@@ -88,18 +88,18 @@ life_exp <- read_csv("https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/NV
 life_lvls <- list()
 life_lvls[["state"]] <- life_exp %>%
   mutate(name = "Connecticut")
-life_lvls[["regions"]] <- life_exp %>%
+life_lvls[["region"]] <- life_exp %>%
   inner_join(tract2reg, by = "tract")
 # life_lvls[["pumas"]] <- life_exp %>%
 #   inner_join(tract2puma, by = "tract") %>%
 #   rename(name = puma_fips)
-life_lvls[["towns"]] <- life_exp %>%
+life_lvls[["town"]] <- life_exp %>%
   left_join(tract2town, by = "tract") %>%
   rename(name = town)
-life_lvls[["neighborhoods"]] <- life_exp %>%
+life_lvls[["neighborhood"]] <- life_exp %>%
   inner_join(nhood_wts, by = c("tract" = "geoid")) %>%
   mutate(pop = pop * weight)
-life_lvls[["tracts"]] <- life_exp %>%
+life_lvls[["tract"]] <- life_exp %>%
   rename(name = tract)
 life_df <- bind_rows(life_lvls, .id = "level") %>%
   mutate(level = as_factor(ifelse(grepl("^\\d{7}$", name), "puma", level))) %>%
