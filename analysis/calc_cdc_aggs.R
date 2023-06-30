@@ -5,6 +5,7 @@ library(cwi)
 # hosp_regs <- readRDS("utils/hospital_areas_list.rds")
 # includes hospitals
 # extra_regs <- readRDS("utils/misc_regions_list.rds")
+# reg_puma_list downloaded from towns2023 release
 reg_puma_list <- readRDS("utils/reg_puma_list.rds")
 meta <- read_csv("utils/cdc_indicators.txt")
 nhood_wts <- lst(new_haven_tracts19, bridgeport_tracts19, hartford_tracts19, stamford_tracts19) %>%
@@ -36,7 +37,7 @@ pops15 <- tidycensus::get_acs("tract", table = "B01003", year = 2015, state = "0
   janitor::clean_names() %>%
   select(geoid, pop = estimate)
 
-############# PLACES, FKA 500 CITIES
+############# PLACES, FKA 500 CITIES ----
 places_url <- "https://chronicdata.cdc.gov/resource/cwsq-ngmh.csv"
 places_q <- list("$select" = "year, categoryid as topic, short_question_text as question, locationname as geoid, data_value as value, totalpopulation as pop",
                  "$where" = "stateabbr='CT'",
@@ -72,8 +73,13 @@ places_df <- bind_rows(pl_lvls, .id = "level") %>%
   ungroup() %>%
   select(level, question, year, city, town, everything())
 
+## METADATA
+places_uuid <- str_extract(places_url, "[a-z]{4}\\-[a-z]{4}")
+places_meta <- httr::GET(file.path(urltools::domain(places_url), "api/views/metadata/v1", places_uuid)) %>%
+  httr::content()
+places_release <- str_extract(places_meta$name, "\\d{4}(?= release)")
 
-################ LIFE EXPECTANCY
+################ LIFE EXPECTANCY ----
 life_exp <- read_csv("https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/NVSS/USALEEP/CSV/CT_A.CSV") %>%
   select(tract = 1, value = 5) %>%
   mutate(year = "2010-2015", question = "Life expectancy") %>%
@@ -110,9 +116,9 @@ out_df <- lst(life_df, places_df) %>%
          topic = as_factor(topic)) %>%
   select(topic, everything(), -src) %>%
   arrange(topic, question, city, level)
-saveRDS(out_df, "output_data/cdc_health_all_lvls_nhood_2020.rds")
+saveRDS(out_df, str_glue("output_data/cdc_health_all_lvls_nhood_{places_release}.rds"))
 
 out_df %>%
   select(-topic) %>%
   pivot_wider(names_from = c(question, year)) %>%
-  write_csv("output_data/cdc_health_all_lvls_wide_2020.csv")
+  write_csv(str_glue("output_data/cdc_health_all_lvls_wide_{places_release}.csv"))
