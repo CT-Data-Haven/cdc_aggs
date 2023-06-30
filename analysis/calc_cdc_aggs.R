@@ -52,18 +52,18 @@ places <- httr::GET(places_url, query = places_q) %>%
 pl_lvls <- list()
 pl_lvls[["state"]] <- places %>%
   mutate(name = "Connecticut")
-pl_lvls[["regions"]] <- places %>%
+pl_lvls[["region"]] <- places %>%
   inner_join(tract2reg, by = c("geoid" = "tract"))
 # pl_lvls[["pumas"]] <- places %>%
 #   inner_join(tract2puma, by = c("geoid" = "tract")) %>%
 #   rename(name = puma_fips)
-pl_lvls[["towns"]] <- places %>%
+pl_lvls[["town"]] <- places %>%
   left_join(tract2town, by = c("geoid" = "tract")) %>%
   rename(name = town)
-pl_lvls[["neighborhoods"]] <- places %>%
+pl_lvls[["neighborhood"]] <- places %>%
   inner_join(nhood_wts, by = "geoid") %>%
   mutate(pop = pop * weight)
-pl_lvls[["tracts"]] <- places %>%
+pl_lvls[["tract"]] <- places %>%
   rename(name = geoid)
 places_df <- bind_rows(pl_lvls, .id = "level") %>%
   mutate(level = as_factor(ifelse(grepl("^\\d{7}$", name), "puma", level)),
