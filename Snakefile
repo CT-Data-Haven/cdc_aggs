@@ -39,6 +39,17 @@ rule univ_meta:
         """
 
 
+rule indicators:
+    output:
+        'utils/cdc_indicators.txt',
+    shell:
+        '''
+        gh release download meta \
+            --repo CT-Data-Haven/scratchpad \
+            --pattern cdc_indicators.txt \
+            --clobber --dir utils
+        '''
+
 rule tract2town:
     output:
         "utils/tract10_to_town.rds",
@@ -51,7 +62,7 @@ rule calc_cdc:
         year_file=rules.release_meta.output.year,
         regs=rules.univ_meta.output.regs,
         tract2town=rules.tract2town.output,
-        indicators="utils/cdc_indicators.txt",
+        indicators=rules.indicators.output,
     params:
         year=read_year(rules.release_meta.output.year),
     output:
