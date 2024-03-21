@@ -1,13 +1,19 @@
 #!/usr/bin/env bash
 
 # metadata to use in other projects
+# assign first argument to yr, remaining arguments to files
 yr=$1
-files=$2
+shift
+files=$@
 
 tag="v$yr"
 
 # does github release with this tag exist?
-tagged=$(gh release list --json tagName --jq '.[] | select(.tagName == "$tag") | ."tagName"')
+tagged=$(gh release list \
+  --repo CT-Data-Haven/cdc_aggs \
+  --json tagName --jq '.[] | ."tagName"' | \
+  grep "$tag")
+echo "tagged: $tagged"
 # does tagged have length?
 if [ -z "$tagged" ]; then
   echo "Creating release $tag"
