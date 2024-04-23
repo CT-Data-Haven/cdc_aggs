@@ -111,13 +111,16 @@ life_df <- bind_rows(life_lvls, .id = "level") |>
 
 
 ####### BIND & OUTPUT
-out_df <- lst(life_df, places_df) |>
-  bind_rows(.id = "src") |>
+## TODO: don't round to 2 digits for small values---use signif?
+out_df <- lst(
+  life_df |> mutate(value = round(value, 1)),
+  places_df |> mutate(value = signif(value, 2))
+) |>
+  bind_rows() |>
   mutate(
-    value = ifelse(src == "places_df", round(value, 2), round(value, 1)),
     topic = as_factor(topic)
   ) |>
-  select(topic, everything(), -src) |>
+  select(topic, everything()) |>
   arrange(topic, question, city, level)
 rds_path <- str_glue("output_data/cdc_health_all_lvls_nhood_{places_release}.rds")
 saveRDS(out_df, rds_path)
