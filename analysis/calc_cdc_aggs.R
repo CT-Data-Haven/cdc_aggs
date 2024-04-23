@@ -114,7 +114,7 @@ life_df <- bind_rows(life_lvls, .id = "level") |>
 ## TODO: don't round to 2 digits for small values---use signif?
 out_df <- lst(
   life_df |> mutate(value = round(value, 1)),
-  places_df |> mutate(value = signif(value, 2))
+  places_df |> mutate(value = round(value, 3))
 ) |>
   bind_rows() |>
   mutate(
