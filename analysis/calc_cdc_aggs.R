@@ -29,6 +29,10 @@ nhood_wts <- lst(new_haven_tracts19, bridgeport_tracts19, hartford_tracts19, sta
 # still uses pre-2020 tracts, but cwi data is updated already
 tract10_to_town <- readRDS("utils/tract10_to_town.rds") |>
   rename(tract = tract10)
+tract10_to_leg <- readRDS("utils/tract10_to_legislative.rds") |>
+  bind_rows(.id = "house") |>
+  tidyr::unite(name, house, dist, sep = " ")
+
 tract2reg <- bind_rows(
   enframe(reg_puma_list, value = "town") |>
     unnest(town),
@@ -63,6 +67,8 @@ pl_lvls[["region"]] <- places |>
 # pl_lvls[["pumas"]] <- places |>
 #   inner_join(tract2puma, by = c("geoid" = "tract")) |>
 #   rename(name = puma_fips)
+pl_lvls[["legislative"]] <- places |>
+  inner_join(tract10_to_leg, by = c("geoid" = "tract"), relationship = "many-to-many")
 pl_lvls[["town"]] <- places |>
   left_join(tract10_to_town, by = c("geoid" = "tract")) |>
   rename(name = town)
@@ -94,6 +100,8 @@ life_lvls[["region"]] <- life_exp |>
 # life_lvls[["pumas"]] <- life_exp |>
 #   inner_join(tract2puma, by = "tract") |>
 #   rename(name = puma_fips)
+life_lvls[["legislative"]] <- life_exp |>
+  inner_join(tract10_to_leg, by = c("tract"), relationship = "many-to-many")
 life_lvls[["town"]] <- life_exp |>
   left_join(tract10_to_town, by = "tract") |>
   rename(name = town)
