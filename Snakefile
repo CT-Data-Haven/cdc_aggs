@@ -24,31 +24,14 @@ rule release_meta:
     script:
         "prep_scripts/get_release_meta.sh"
 
-
-rule univ_meta:
-    # stuff from towns repo
+rule download_meta:
     output:
-        regs="utils/reg_puma_list.rds",
-    shell:
-        """
-        patt=$(basename {output.regs})
-        gh release download metadata \
-            --repo CT-Data-Haven/towns2023 \
-            -p $patt \
-            --clobber --dir utils
-        """
+        xwalk = 'utils/tract10_to_legislative.rds',
+        headings = 'utils/cdc_indicators.txt',
+        regs = 'utils/reg_puma_list.rds',
+    script:
+        'prep_scripts/download_meta.sh'
 
-
-rule indicators:
-    output:
-        'utils/cdc_indicators.txt',
-    shell:
-        '''
-        gh release download meta \
-            --repo CT-Data-Haven/scratchpad \
-            --pattern cdc_indicators.txt \
-            --clobber --dir utils
-        '''
 
 rule tract2town:
     output:
@@ -60,9 +43,9 @@ rule tract2town:
 rule calc_cdc:
     input:
         year_file=rules.release_meta.output.year,
-        regs=rules.univ_meta.output.regs,
+        regs=rules.download_meta.output.regs,
+        headings=rules.download_meta.output.headings,
         tract2town=rules.tract2town.output,
-        indicators=rules.indicators.output,
     params:
         year=read_year(rules.release_meta.output.year),
     output:
