@@ -31,7 +31,10 @@ tract10_to_town <- readRDS("utils/tract10_to_town.rds") |>
   rename(tract = tract10)
 tract10_to_leg <- readRDS("utils/tract10_to_legislative.rds") |>
   bind_rows(.id = "house") |>
-  tidyr::unite(name, house, dist, sep = " ")
+  mutate(lvl = forcats::fct_recode(house, Senate = "upper", House = "lower")) |>
+  mutate(dist = as.numeric(str_remove(dist, "^09"))) |>
+  mutate(name = as.character(str_glue("State {lvl} District {dist}"))) |>
+  mutate(lvl = paste(house, "legis", sep = "_"))
 
 tract2reg <- bind_rows(
   enframe(reg_puma_list, value = "town") |>
@@ -78,6 +81,7 @@ pl_lvls[["neighborhood"]] <- places |>
 pl_lvls[["tract"]] <- places |>
   rename(name = geoid)
 places_df <- bind_rows(pl_lvls, .id = "level") |>
+  mutate(level = coalesce(lvl, level)) |>
   mutate(level = as_factor(ifelse(grepl("^\\d{7}$", name), "puma", level)),
          year = as.character(year)) |>
   group_by(topic, question, level, year, city, town, name) |>
@@ -111,6 +115,7 @@ life_lvls[["neighborhood"]] <- life_exp |>
 life_lvls[["tract"]] <- life_exp |>
   rename(name = tract)
 life_df <- bind_rows(life_lvls, .id = "level") |>
+  mutate(level = coalesce(lvl, level)) |>
   mutate(level = as_factor(ifelse(grepl("^\\d{7}$", name), "puma", level))) |>
   group_by(topic = "life_expectancy", question, level, year, city, town, name) |>
   summarise(value = weighted.mean(value, pop)) |>
