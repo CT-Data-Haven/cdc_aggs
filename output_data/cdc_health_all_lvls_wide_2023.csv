@@ -4,35 +4,35 @@ neighborhood,Bridgeport,NA,Brooklawn-St. Vincent,79.3,0.272,0.125,0.049,0.117,0.
 neighborhood,Bridgeport,NA,Downtown,73.4,0.304,0.15,0.06,0.122,0.129,0.314,0.728,0.565,0.157,0.166,0.369
 neighborhood,Bridgeport,NA,East End,76.3,0.329,0.171,0.055,0.135,0.142,0.339,0.737,0.505,0.193,0.208,0.417
 neighborhood,Bridgeport,NA,East Side,75.9,0.351,0.172,0.053,0.13,0.139,0.299,0.7,0.47,0.27,0.212,0.394
-neighborhood,Bridgeport,NA,Enterprise,76,0.28,0.129,0.044,0.123,0.105,0.277,0.706,0.566,0.176,0.182,0.384
-neighborhood,Bridgeport,NA,Hollow,75.8,0.363,0.169,0.053,0.134,0.128,0.293,0.686,0.439,0.272,0.243,0.406
+neighborhood,Bridgeport,NA,Enterprise,75.9,0.281,0.13,0.044,0.124,0.106,0.277,0.705,0.563,0.178,0.183,0.384
+neighborhood,Bridgeport,NA,Hollow,75.8,0.363,0.169,0.053,0.134,0.128,0.293,0.686,0.439,0.271,0.243,0.406
 neighborhood,Bridgeport,NA,Mill Hill,76.3,0.32,0.169,0.062,0.126,0.135,0.332,0.733,0.542,0.181,0.192,0.386
 neighborhood,Bridgeport,NA,North End,79.1,0.25,0.118,0.051,0.113,0.092,0.276,0.722,0.658,0.113,0.14,0.343
 neighborhood,Bridgeport,NA,Reservoir-Whiskey Hill,80.3,0.278,0.141,0.05,0.126,0.12,0.319,0.741,0.588,0.146,0.17,0.397
-neighborhood,Bridgeport,NA,South End,79.1,0.252,0.096,0.033,0.117,0.083,0.219,0.687,0.572,0.142,0.146,0.364
+neighborhood,Bridgeport,NA,South End,79.1,0.252,0.097,0.033,0.117,0.083,0.22,0.687,0.572,0.142,0.146,0.364
 neighborhood,Bridgeport,NA,Upper East Side,76.1,0.291,0.152,0.059,0.118,0.121,0.318,0.735,0.593,0.159,0.166,0.369
 neighborhood,Bridgeport,NA,West End-West Side,75.6,0.346,0.17,0.054,0.132,0.136,0.309,0.706,0.469,0.238,0.222,0.404
-neighborhood,Hartford,Hartford,Asylum Hill,79.3,0.341,0.153,0.052,0.138,0.144,0.353,0.77,0.536,0.139,0.192,0.425
-neighborhood,Hartford,Hartford,Barry Square,77.8,0.411,0.171,0.054,0.145,0.146,0.305,0.731,0.471,0.233,0.211,0.399
-neighborhood,Hartford,Hartford,Behind the Rocks,77.9,0.382,0.175,0.057,0.132,0.158,0.333,0.745,0.498,0.23,0.201,0.402
-neighborhood,Hartford,Hartford,Blue Hills,77.2,0.338,0.14,0.048,0.151,0.13,0.355,0.794,0.591,0.093,0.158,0.425
+neighborhood,Hartford,Hartford,Asylum Hill,79.5,0.336,0.151,0.053,0.137,0.143,0.353,0.771,0.546,0.134,0.188,0.42
+neighborhood,Hartford,Hartford,Barry Square,78,0.408,0.169,0.054,0.145,0.145,0.304,0.732,0.475,0.23,0.208,0.398
+neighborhood,Hartford,Hartford,Behind the Rocks,78.4,0.375,0.171,0.058,0.13,0.154,0.332,0.749,0.515,0.221,0.192,0.397
+neighborhood,Hartford,Hartford,Blue Hills,77.2,0.338,0.141,0.048,0.151,0.13,0.356,0.794,0.591,0.093,0.158,0.425
 neighborhood,Hartford,Hartford,Clay Arsenal,74.8,0.457,0.228,0.068,0.158,0.2,0.398,0.769,0.406,0.244,0.262,0.451
-neighborhood,Hartford,Hartford,Downtown,81.2,0.176,0.055,0.028,0.106,0.062,0.216,0.734,0.747,0.049,0.081,0.325
+neighborhood,Hartford,Hartford,Downtown,80.9,0.19,0.063,0.031,0.107,0.07,0.227,0.736,0.73,0.058,0.088,0.33
 neighborhood,Hartford,Hartford,Frog Hollow,75.9,0.387,0.166,0.056,0.133,0.149,0.314,0.733,0.488,0.247,0.199,0.397
-neighborhood,Hartford,Hartford,Northeast,77.4,0.347,0.174,0.061,0.143,0.158,0.405,0.805,0.577,0.114,0.184,0.427
-neighborhood,Hartford,Hartford,Parkville,73.7,0.425,0.198,0.068,0.14,0.167,0.347,0.741,0.458,0.245,0.23,0.408
-neighborhood,Hartford,Hartford,Sheldon Charter Oak,76.5,0.365,0.167,0.061,0.131,0.152,0.341,0.753,0.521,0.187,0.189,0.394
-neighborhood,Hartford,Hartford,South End & South Meadows,78.2,0.375,0.17,0.06,0.133,0.143,0.33,0.745,0.528,0.203,0.201,0.39
-neighborhood,Hartford,Hartford,South Green,71.9,0.391,0.185,0.068,0.128,0.168,0.354,0.755,0.509,0.218,0.188,0.391
-neighborhood,Hartford,Hartford,Southwest,78.3,0.341,0.162,0.064,0.121,0.141,0.345,0.771,0.6,0.161,0.152,0.374
-neighborhood,Hartford,Hartford,Upper Albany,77,0.418,0.226,0.071,0.164,0.201,0.453,0.81,0.471,0.147,0.248,0.475
-neighborhood,Hartford,Hartford,West End,76.6,0.326,0.145,0.057,0.131,0.134,0.333,0.761,0.593,0.126,0.168,0.378
+neighborhood,Hartford,Hartford,Northeast,76.2,0.387,0.197,0.061,0.156,0.178,0.418,0.802,0.504,0.143,0.22,0.461
+neighborhood,Hartford,Hartford,Parkville,74.9,0.399,0.182,0.063,0.137,0.155,0.333,0.74,0.49,0.224,0.214,0.401
+neighborhood,Hartford,Hartford,Sheldon Charter Oak,76.4,0.368,0.169,0.061,0.132,0.153,0.342,0.753,0.517,0.19,0.191,0.395
+neighborhood,Hartford,Hartford,South End & South Meadows,78.3,0.375,0.17,0.06,0.133,0.143,0.329,0.745,0.527,0.204,0.201,0.39
+neighborhood,Hartford,Hartford,South Green,73.3,0.399,0.185,0.064,0.133,0.164,0.344,0.748,0.49,0.23,0.202,0.397
+neighborhood,Hartford,Hartford,Southwest,77.7,0.345,0.164,0.064,0.121,0.143,0.347,0.771,0.594,0.164,0.156,0.376
+neighborhood,Hartford,Hartford,Upper Albany,77,0.416,0.225,0.07,0.164,0.2,0.452,0.81,0.472,0.147,0.247,0.475
+neighborhood,Hartford,Hartford,West End,76.1,0.337,0.151,0.059,0.133,0.139,0.338,0.761,0.579,0.13,0.174,0.382
 neighborhood,Hartford,West Hartford,Bishops Corner West,83.5,0.23,0.106,0.062,0.104,0.098,0.339,0.804,0.791,0.036,0.082,0.29
-neighborhood,Hartford,West Hartford,Buena Vista,81.5,0.259,0.123,0.071,0.105,0.108,0.366,0.811,0.77,0.041,0.094,0.3
+neighborhood,Hartford,West Hartford,Buena Vista,83.1,0.223,0.102,0.061,0.103,0.096,0.342,0.807,0.799,0.033,0.082,0.293
 neighborhood,Hartford,West Hartford,Corbins Corner,81.9,0.257,0.116,0.06,0.108,0.099,0.322,0.783,0.737,0.06,0.109,0.318
 neighborhood,Hartford,West Hartford,Elizabeth Park,86.2,0.189,0.08,0.046,0.104,0.079,0.295,0.789,0.815,0.029,0.076,0.292
 neighborhood,Hartford,West Hartford,Farmington East,83.5,0.227,0.094,0.049,0.111,0.082,0.284,0.772,0.759,0.049,0.091,0.308
-neighborhood,Hartford,West Hartford,Golf Acres,81,0.268,0.125,0.065,0.113,0.109,0.356,0.809,0.752,0.048,0.093,0.319
+neighborhood,Hartford,West Hartford,Golf Acres,80.7,0.252,0.11,0.063,0.107,0.092,0.327,0.803,0.787,0.039,0.075,0.29
 neighborhood,Hartford,West Hartford,Kennedy Park,79.9,0.25,0.101,0.043,0.115,0.094,0.279,0.751,0.68,0.083,0.13,0.351
 neighborhood,Hartford,West Hartford,Mountain West,81.4,0.19,0.082,0.052,0.101,0.085,0.317,0.803,0.828,0.025,0.069,0.283
 neighborhood,Hartford,West Hartford,New Park,80,0.262,0.11,0.046,0.116,0.105,0.295,0.761,0.67,0.092,0.135,0.361
@@ -40,39 +40,36 @@ neighborhood,Hartford,West Hartford,Rockledge,83.1,0.213,0.09,0.049,0.106,0.083,
 neighborhood,Hartford,West Hartford,West Hartford Center,83.1,0.18,0.074,0.043,0.103,0.074,0.281,0.781,0.816,0.028,0.075,0.293
 neighborhood,New Haven,NA,Amity,77,0.299,0.144,0.049,0.133,0.126,0.351,0.771,0.604,0.105,0.196,0.434
 neighborhood,New Haven,NA,Annex,80.4,0.292,0.125,0.045,0.117,0.106,0.29,0.723,0.593,0.157,0.195,0.399
-neighborhood,New Haven,NA,Beaver Hills,75.8,0.274,0.121,0.042,0.13,0.112,0.325,0.766,0.631,0.091,0.172,0.423
-neighborhood,New Haven,NA,Dixwell,73.2,0.336,0.164,0.054,0.132,0.149,0.378,0.762,0.532,0.136,0.224,0.451
-neighborhood,New Haven,NA,Downtown,79.2,0.204,0.043,0.018,0.113,0.041,0.15,0.684,0.697,0.067,0.098,0.343
-neighborhood,New Haven,NA,Dwight,78,0.309,0.128,0.04,0.133,0.115,0.302,0.729,0.545,0.135,0.209,0.423
-neighborhood,New Haven,NA,East Rock,82.8,0.194,0.068,0.03,0.106,0.064,0.212,0.708,0.715,0.075,0.112,0.34
+neighborhood,New Haven,NA,Beaver Hills,75.8,0.274,0.121,0.042,0.13,0.111,0.324,0.765,0.631,0.092,0.171,0.422
+neighborhood,New Haven,NA,Dixwell,73.4,0.285,0.112,0.037,0.126,0.101,0.274,0.727,0.599,0.109,0.171,0.41
+neighborhood,New Haven,NA,Downtown,80,0.182,0.046,0.02,0.106,0.046,0.17,0.693,0.718,0.059,0.095,0.34
+neighborhood,New Haven,NA,Dwight,77.6,0.278,0.095,0.032,0.127,0.086,0.241,0.71,0.593,0.109,0.167,0.391
+neighborhood,New Haven,NA,East Rock,82.9,0.193,0.067,0.03,0.106,0.063,0.211,0.707,0.716,0.073,0.111,0.34
 neighborhood,New Haven,NA,East Shore,80.7,0.228,0.102,0.052,0.102,0.087,0.301,0.757,0.751,0.062,0.129,0.334
 neighborhood,New Haven,NA,Edgewood,77.9,0.311,0.143,0.045,0.136,0.125,0.342,0.755,0.562,0.123,0.226,0.447
-neighborhood,New Haven,NA,Fair Haven,78.2,0.349,0.155,0.05,0.124,0.131,0.306,0.719,0.516,0.231,0.217,0.413
-neighborhood,New Haven,NA,Fair Haven Heights,75,0.363,0.204,0.085,0.122,0.163,0.401,0.776,0.586,0.147,0.2,0.39
+neighborhood,New Haven,NA,Fair Haven,78.2,0.349,0.155,0.05,0.124,0.131,0.306,0.719,0.515,0.231,0.217,0.413
+neighborhood,New Haven,NA,Fair Haven Heights,75.5,0.356,0.197,0.082,0.122,0.158,0.393,0.774,0.589,0.146,0.198,0.392
 neighborhood,New Haven,NA,Hill,75.9,0.393,0.195,0.065,0.134,0.165,0.362,0.745,0.477,0.227,0.24,0.434
 neighborhood,New Haven,NA,Newhallville,71.7,0.42,0.238,0.072,0.159,0.206,0.46,0.799,0.444,0.152,0.294,0.499
-neighborhood,New Haven,NA,Prospect Hill,82.3,0.221,0.085,0.035,0.113,0.082,0.254,0.732,0.676,0.073,0.134,0.371
-neighborhood,New Haven,NA,Quinnipiac Meadows,81.6,0.271,0.117,0.041,0.12,0.105,0.298,0.742,0.622,0.123,0.181,0.408
+neighborhood,New Haven,NA,Prospect Hill,82.3,0.22,0.083,0.034,0.113,0.08,0.248,0.73,0.677,0.073,0.132,0.37
+neighborhood,New Haven,NA,Quinnipiac Meadows,81.4,0.273,0.118,0.041,0.12,0.105,0.298,0.741,0.62,0.125,0.182,0.408
 neighborhood,New Haven,NA,West River,74.6,0.402,0.223,0.073,0.146,0.184,0.426,0.783,0.485,0.167,0.26,0.462
 neighborhood,New Haven,NA,West Rock,78.2,0.295,0.094,0.034,0.137,0.076,0.229,0.721,0.624,0.101,0.15,0.381
-neighborhood,New Haven,NA,Westville,82.3,0.223,0.087,0.04,0.114,0.081,0.273,0.753,0.73,0.062,0.117,0.352
-neighborhood,New Haven,NA,Wooster Square,83.5,0.235,0.089,0.035,0.113,0.083,0.252,0.719,0.663,0.101,0.146,0.365
-neighborhood,Stamford,NA,Belltown,81.5,0.185,0.083,0.041,0.1,0.069,0.237,0.715,0.739,0.072,0.107,0.307
-neighborhood,Stamford,NA,Cove-East Side,81.4,0.232,0.104,0.045,0.105,0.084,0.248,0.701,0.658,0.14,0.134,0.333
-neighborhood,Stamford,NA,Downtown,81.2,0.178,0.074,0.034,0.097,0.066,0.214,0.694,0.705,0.079,0.1,0.318
-neighborhood,Stamford,NA,Glenbrook,81.7,0.202,0.094,0.044,0.103,0.078,0.252,0.72,0.717,0.084,0.115,0.315
-neighborhood,Stamford,NA,Newfield,82.7,0.167,0.079,0.047,0.095,0.068,0.259,0.746,0.806,0.039,0.082,0.274
-neighborhood,Stamford,NA,North Stamford,86,0.158,0.075,0.046,0.093,0.07,0.264,0.753,0.816,0.035,0.074,0.272
-neighborhood,Stamford,NA,Palmers Hill,84.6,0.172,0.082,0.048,0.094,0.071,0.264,0.748,0.798,0.042,0.081,0.276
-neighborhood,Stamford,NA,Ridgeway,84.1,0.188,0.084,0.04,0.098,0.073,0.242,0.716,0.73,0.085,0.106,0.319
-neighborhood,Stamford,NA,Roxbury,85.4,0.182,0.088,0.053,0.093,0.073,0.278,0.758,0.802,0.041,0.079,0.273
+neighborhood,New Haven,NA,Westville,82.9,0.213,0.087,0.04,0.11,0.081,0.28,0.757,0.746,0.057,0.112,0.348
+neighborhood,New Haven,NA,Wooster Square,83,0.226,0.085,0.034,0.112,0.079,0.246,0.718,0.675,0.094,0.14,0.36
+neighborhood,Stamford,NA,Cove,82.1,0.232,0.104,0.045,0.104,0.084,0.248,0.7,0.658,0.143,0.133,0.331
+neighborhood,Stamford,NA,Downtown,81.2,0.19,0.083,0.038,0.099,0.074,0.231,0.702,0.7,0.084,0.103,0.318
+neighborhood,Stamford,NA,East Side,80,0.241,0.115,0.048,0.111,0.093,0.271,0.719,0.653,0.127,0.139,0.343
+neighborhood,Stamford,NA,Glenbrook-Belltown,81.2,0.201,0.091,0.043,0.103,0.075,0.242,0.711,0.707,0.087,0.117,0.316
+neighborhood,Stamford,NA,North Stamford,86.2,0.162,0.078,0.047,0.093,0.071,0.267,0.753,0.81,0.037,0.077,0.274
+neighborhood,Stamford,NA,Ridgeway-Bullshead,82.7,0.174,0.074,0.037,0.095,0.064,0.223,0.707,0.734,0.071,0.096,0.311
 neighborhood,Stamford,NA,Shippan,84.2,0.151,0.069,0.042,0.094,0.063,0.247,0.743,0.819,0.034,0.074,0.274
 neighborhood,Stamford,NA,South End,78.1,0.198,0.077,0.03,0.098,0.075,0.209,0.677,0.66,0.154,0.109,0.331
-neighborhood,Stamford,NA,Springdale,81.8,0.203,0.093,0.045,0.103,0.075,0.25,0.715,0.714,0.077,0.125,0.317
-neighborhood,Stamford,NA,Turn Of River,83.6,0.176,0.082,0.045,0.095,0.07,0.254,0.736,0.781,0.052,0.09,0.29
-neighborhood,Stamford,NA,Waterside,82,0.199,0.093,0.044,0.103,0.081,0.259,0.727,0.719,0.09,0.11,0.315
-neighborhood,Stamford,NA,West Side,80,0.262,0.125,0.05,0.11,0.101,0.279,0.717,0.616,0.161,0.146,0.349
-neighborhood,Stamford,NA,Westover,84.6,0.172,0.082,0.048,0.094,0.071,0.264,0.749,0.798,0.042,0.081,0.276
+neighborhood,Stamford,NA,Springdale,81.8,0.195,0.089,0.042,0.102,0.072,0.244,0.714,0.723,0.074,0.12,0.316
+neighborhood,Stamford,NA,Turn of River-Newfield,82.7,0.182,0.086,0.048,0.095,0.071,0.261,0.739,0.78,0.051,0.093,0.289
+neighborhood,Stamford,NA,Waterside,79.1,0.244,0.114,0.046,0.111,0.097,0.272,0.714,0.629,0.14,0.141,0.352
+neighborhood,Stamford,NA,West Side,78.1,0.296,0.142,0.052,0.116,0.113,0.288,0.707,0.55,0.204,0.168,0.372
+neighborhood,Stamford,NA,Westover,85.4,0.182,0.088,0.053,0.093,0.073,0.278,0.758,0.802,0.041,0.079,0.273
 state,NA,NA,Connecticut,80.3,0.248,0.112,0.052,0.111,0.094,0.297,0.754,0.704,0.08,0.139,0.336
 puma,NA,NA,0900100,81.9,0.203,0.092,0.046,0.103,0.074,0.252,0.719,0.727,0.081,0.12,0.309
 puma,NA,NA,0900101,83.1,0.17,0.078,0.045,0.097,0.066,0.251,0.739,0.799,0.041,0.085,0.278

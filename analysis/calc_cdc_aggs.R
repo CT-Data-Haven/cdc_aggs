@@ -76,7 +76,7 @@ pl_lvls[["town"]] <- places |>
   left_join(tract10_to_town, by = c("geoid" = "tract")) |>
   rename(name = town)
 pl_lvls[["neighborhood"]] <- places |>
-  inner_join(nhood_wts, by = "geoid", relationship = "many-to-many") |>
+  inner_join(nhood_wts, by = c("geoid" = "geoid10"), relationship = "many-to-many") |>
   mutate(pop = pop * weight)
 pl_lvls[["tract"]] <- places |>
   rename(name = geoid)
@@ -110,7 +110,7 @@ life_lvls[["town"]] <- life_exp |>
   left_join(tract10_to_town, by = "tract") |>
   rename(name = town)
 life_lvls[["neighborhood"]] <- life_exp |>
-  inner_join(nhood_wts, by = c("tract" = "geoid")) |>
+  inner_join(nhood_wts, by = c("tract" = "geoid10")) |>
   mutate(pop = pop * weight)
 life_lvls[["tract"]] <- life_exp |>
   rename(name = tract)
