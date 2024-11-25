@@ -3,7 +3,7 @@
 # get xwalks from scratchpad
 gh release download xwalks \
     --repo CT-Data-Haven/scratchpad \
-    --pattern "tract10_to_legislative.rds" \
+    --pattern "tract_to_legislative.rds" \
     --dir utils \
     --clobber
 

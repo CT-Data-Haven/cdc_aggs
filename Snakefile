@@ -26,18 +26,18 @@ rule release_meta:
 
 rule download_meta:
     output:
-        xwalk = 'utils/tract10_to_legislative.rds',
+        xwalk = 'utils/tract_to_legislative.rds',
         headings = 'utils/cdc_indicators.txt',
         regs = 'utils/reg_puma_list.rds',
     script:
         'prep_scripts/download_meta.sh'
 
 
-rule tract2town:
-    output:
-        "utils/tract10_to_town.rds",
-    script:
-        "prep_scripts/tract10_to_town.R"
+# rule tract2town:
+#     output:
+#         "utils/tract_to_town.rds",
+#     script:
+#         "prep_scripts/tract10_to_town.R"
 
 
 rule calc_cdc:
@@ -45,7 +45,7 @@ rule calc_cdc:
         year_file=rules.release_meta.output.year,
         regs=rules.download_meta.output.regs,
         headings=rules.download_meta.output.headings,
-        tract2town=rules.tract2town.output,
+        # tract2town=rules.tract2town.output,
     params:
         year=read_year(rules.release_meta.output.year),
     output:
